@@ -109,8 +109,31 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
   title="CIBAI Studio — Hacemos la web brutal"
   description="Agencia de diseño web, desarrollo de aplicaciones e inteligencia artificial para empresas en España. Diseño cyberpunk, código brutal, resultados reales."
 >
+  <!-- ═══════════════ TOP BAR (HUD) ═══════════════ -->
+  <div class="fixed top-0 left-0 right-0 z-50 bg-cyber-black border-b border-cyber-border/50">
+    <div class="mx-auto max-w-7xl px-6 flex items-center justify-between h-8">
+      <div class="flex items-center gap-4">
+        <span class="hud-blink inline-block w-1.5 h-1.5 rounded-full bg-cyber-teal"></span>
+        <span class="font-mono text-[9px] text-cyber-text/60 uppercase tracking-widest">SYS.ONLINE</span>
+        <span class="font-mono text-[9px] text-cyber-border">|</span>
+        <span class="font-mono text-[9px] text-cyber-teal/70">NODE_ACTIVE</span>
+        <span class="hud-blink-slow inline-block w-1 h-1 rounded-full bg-cyber-orange ml-1"></span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4">
+        <span class="font-mono text-[9px] text-cyber-text/40">PING: <span class="text-cyber-teal/70">8ms</span></span>
+        <span class="font-mono text-[9px] text-cyber-border">|</span>
+        <span class="font-mono text-[9px] text-cyber-text/40">UPTIME: <span class="text-cyber-orange/70">99.9%</span></span>
+        <span class="font-mono text-[9px] text-cyber-border">|</span>
+        <span class="hud-blink inline-block w-1.5 h-1.5 rounded-full bg-cyber-red"></span>
+        <span class="font-mono text-[9px] text-cyber-text/40">REC</span>
+        <span class="font-mono text-[9px] text-cyber-border">|</span>
+        <span class="font-mono text-[9px] text-cyber-text/40" id="hud-clock">00:00:00</span>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══════════════ NAV ═══════════════ -->
-  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-cyber-border bg-cyber-black/90 backdrop-blur-md">
+  <nav class="fixed top-8 left-0 right-0 z-50 border-b border-cyber-border bg-cyber-black/90 backdrop-blur-md">
     <div class="mx-auto max-w-7xl px-6 flex items-center justify-between h-16">
       <a href="/" class="flex items-center gap-1">
         <span class="text-lg font-bold tracking-tight text-cyber-white">CIBAI</span>
@@ -154,14 +177,8 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
   </nav>
 
   <!-- ═══════════════ HERO ═══════════════ -->
-  <section id="main-content" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,77,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,77,0,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
-
-    <div class="absolute top-24 right-8 font-mono text-[10px] text-cyber-text/40 hidden lg:block text-right leading-relaxed">
-      <div>SYS_ON</div>
-      <div>PING: 8ms</div>
-      <div class="text-cyber-teal">STATUS: ONLINE</div>
-    </div>
+  <section id="main-content" class="relative min-h-screen flex items-center pt-24 overflow-hidden hero-section">
+    <div class="absolute inset-0 opacity-[0.03] hero-bg-grid" style="background-image: linear-gradient(rgba(255,77,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,77,0,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
     <div class="mx-auto max-w-7xl px-6 w-full">
       <div class="max-w-4xl">
@@ -173,22 +190,27 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
           <span class="text-cyber-teal">STATUS: ONLINE</span>
         </div>
 
-        <h1 class="text-[clamp(3rem,8vw,7rem)] font-black leading-[0.9] tracking-tighter mb-8 animate-fade-in-up animate-delay-100">
+        <h1 class="text-[clamp(3rem,8vw,7rem)] font-black leading-[0.9] tracking-tighter mb-8 animate-fade-in-up animate-delay-100 glitch-text" data-text="HACEMOS LA WEB BRUTAL">
           HACEMOS<br/>
           LA WEB<br/>
           <span class="text-cyber-orange glow-orange">BRUTAL</span>
         </h1>
 
-        <p class="text-lg text-cyber-text max-w-xl mb-10 leading-relaxed font-light animate-fade-in-up animate-delay-200">
-          Desarrollamos sitios web y webapps que impactan. Sin artificios. Sin genéricos. Sin compromiso.
-        </p>
+        <div class="mb-10 animate-fade-in-up animate-delay-200">
+          <div class="font-mono text-sm text-cyber-text max-w-xl leading-relaxed bg-cyber-dark/80 border border-cyber-border p-4">
+            <span class="text-cyber-orange">$</span><span class="text-cyber-teal ml-1">cibai</span><span class="text-cyber-text ml-1">--init</span>
+            <div class="mt-2" id="typing-container">
+              <span id="typing-text" class="text-cyber-text/90"></span><span class="typing-cursor text-cyber-orange">█</span>
+            </div>
+          </div>
+        </div>
 
         <div class="flex flex-wrap gap-4 mb-20 animate-fade-in-up animate-delay-300">
-          <a href="#contacto" class="btn-primary">
+          <a href="#contacto" class="btn-primary btn-glitch">
             Solicitar Proyecto
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
-          <a href="#portfolio" class="btn-secondary">Ver Proyectos</a>
+          <a href="#portfolio" class="btn-secondary btn-glitch">Ver Proyectos</a>
         </div>
 
         <div class="grid grid-cols-3 gap-8 max-w-md animate-fade-in-up animate-delay-400">
@@ -219,7 +241,9 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
     <div class="ticker-track">
       {[...tickerItems, ...tickerItems].map((item) => (
         <span class="inline-flex items-center gap-4 px-6 font-mono text-sm text-cyber-text whitespace-nowrap">
-          <span class="w-1.5 h-1.5 bg-cyber-orange rounded-full flex-shrink-0"></span>
+          <span class="ticker-sep flex-shrink-0 flex items-center gap-[2px] text-cyber-orange font-bold text-xs" aria-hidden="true">
+            <span class="inline-block -skew-x-12">///</span>
+          </span>
           {item}
         </span>
       ))}
@@ -387,35 +411,86 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
     </div>
   </section>
 
-  <!-- ═══════════════ CONTACTO CTA ═══════════════ -->
+  <!-- ═══════════════ CONTACTO ═══════════════ -->
   <section id="contacto" class="py-32 border-t border-cyber-border relative">
-    <div class="mx-auto max-w-7xl px-6 text-center">
-      <div class="font-mono text-xs text-cyber-orange mb-6">// ¿TIENES UN PROYECTO?</div>
-      <h2 class="text-[clamp(2rem,4vw,3.5rem)] font-black leading-tight mb-6">
-        Hablemos de lo que necesitas.
-      </h2>
-      <p class="text-cyber-text max-w-lg mx-auto mb-10 font-light">
-        Primera consulta gratuita. Sin compromisos. Solo una conversación honesta sobre cómo podemos ayudarte a crecer.
-      </p>
-      <div class="flex flex-wrap gap-4 justify-center">
-        <a href="mailto:hola@cibai.studio" class="btn-primary">
-          Cuéntanos tu proyecto
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-        </a>
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-16">
+        <div class="section-number mb-4">// CONTACTO</div>
+        <h2 class="text-[clamp(2rem,4vw,3.5rem)] font-black leading-tight mb-4">
+          Hablemos de lo que necesitas.
+        </h2>
+        <p class="text-cyber-text max-w-lg font-light">
+          Primera consulta gratuita. Sin compromisos. Solo una conversación honesta sobre cómo podemos ayudarte a crecer.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
-        <div>
-          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-2">EMAIL</div>
-          <a href="mailto:hola@cibai.studio" class="text-sm text-cyber-white hover:text-cyber-orange transition-colors">hola@cibai.studio</a>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Contact Form -->
+        <div class="card-brutal p-8">
+          <form id="contact-form" class="space-y-6" action="mailto:hola@cibai.studio" method="POST" enctype="text/plain">
+            <div>
+              <label for="contact-name" class="font-mono text-[10px] text-cyber-text uppercase tracking-widest block mb-2">NOMBRE</label>
+              <input type="text" id="contact-name" name="nombre" required
+                class="w-full bg-cyber-black border border-cyber-border px-4 py-3 font-mono text-sm text-cyber-white focus:border-cyber-orange focus:outline-none transition-colors placeholder:text-cyber-text/30"
+                placeholder="Tu nombre" />
+            </div>
+            <div>
+              <label for="contact-email" class="font-mono text-[10px] text-cyber-text uppercase tracking-widest block mb-2">EMAIL</label>
+              <input type="email" id="contact-email" name="email" required
+                class="w-full bg-cyber-black border border-cyber-border px-4 py-3 font-mono text-sm text-cyber-white focus:border-cyber-orange focus:outline-none transition-colors placeholder:text-cyber-text/30"
+                placeholder="tu@email.com" />
+            </div>
+            <div>
+              <label for="contact-project" class="font-mono text-[10px] text-cyber-text uppercase tracking-widest block mb-2">TIPO DE PROYECTO</label>
+              <select id="contact-project" name="proyecto"
+                class="w-full bg-cyber-black border border-cyber-border px-4 py-3 font-mono text-sm text-cyber-white focus:border-cyber-orange focus:outline-none transition-colors">
+                <option value="web">Diseño Web</option>
+                <option value="webapp">Webapp a Medida</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="automatizacion">Automatización</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            <div>
+              <label for="contact-message" class="font-mono text-[10px] text-cyber-text uppercase tracking-widest block mb-2">MENSAJE</label>
+              <textarea id="contact-message" name="mensaje" rows="4" required
+                class="w-full bg-cyber-black border border-cyber-border px-4 py-3 font-mono text-sm text-cyber-white focus:border-cyber-orange focus:outline-none transition-colors resize-none placeholder:text-cyber-text/30"
+                placeholder="Describe tu proyecto..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full justify-center">
+              Enviar Proyecto
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </form>
         </div>
-        <div>
-          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-2">UBICACIÓN</div>
-          <span class="text-sm text-cyber-white">Barcelona, España</span>
-        </div>
-        <div>
-          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-2">HORARIO</div>
-          <span class="text-sm text-cyber-white">Lun&ndash;Vie &middot; 9:00&ndash;18:00h</span>
+
+        <!-- Terminal Visualization -->
+        <div class="card-brutal p-0 overflow-hidden flex flex-col">
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-cyber-border bg-cyber-gray/50">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyber-red/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-cyber-orange/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-cyber-teal/80"></span>
+            <span class="font-mono text-[10px] text-cyber-text/60 ml-2">cibai@studio:~/proyectos</span>
+          </div>
+          <div class="p-6 font-mono text-xs leading-relaxed flex-1 overflow-auto" id="terminal-output">
+            <div class="text-cyber-teal">$ cat info.txt</div>
+            <div class="mt-2 text-cyber-text/80">
+              <div><span class="text-cyber-orange">EMPRESA:</span> CIBAI Studio</div>
+              <div><span class="text-cyber-orange">UBICACIÓN:</span> Berga, Barcelona, España</div>
+              <div><span class="text-cyber-orange">EMAIL:</span> hola@cibai.studio</div>
+              <div><span class="text-cyber-orange">HORARIO:</span> Lun-Vie 9:00-18:00h</div>
+              <div><span class="text-cyber-orange">STATUS:</span> <span class="text-cyber-teal">Disponibles para proyectos</span></div>
+            </div>
+            <div class="mt-4 text-cyber-teal">$ uptime</div>
+            <div class="mt-1 text-cyber-text/80">online 365 days, load avg: 0.02, 0.01, 0.00</div>
+            <div class="mt-4 text-cyber-teal">$ cat respuesta.md</div>
+            <div class="mt-1 text-cyber-text/80">
+              <div>Respondemos en menos de 48h.</div>
+              <div>Primera consulta gratuita.</div>
+              <div>Sin compromisos.</div>
+            </div>
+            <div class="mt-4 text-cyber-teal">$ <span class="typing-cursor text-cyber-orange">█</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -498,7 +573,6 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
         }
       });
 
-      // Close mobile menu on link click
       mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
@@ -539,5 +613,85 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
       (el as HTMLElement).style.opacity = '0';
       observer.observe(el);
     });
+
+    // HUD Clock
+    const clockEl = document.getElementById('hud-clock');
+    if (clockEl) {
+      const updateClock = () => {
+        const now = new Date();
+        clockEl.textContent = now.toLocaleTimeString('es-ES', { hour12: false });
+      };
+      updateClock();
+      setInterval(updateClock, 1000);
+    }
+
+    // Typing effect for hero terminal
+    const typingEl = document.getElementById('typing-text');
+    if (typingEl) {
+      const lines = [
+        '> Desarrollamos sitios web y webapps que impactan.',
+        '> Sin artificios. Sin genéricos. Sin compromiso.',
+        '> Ready.'
+      ];
+      let lineIdx = 0;
+      let charIdx = 0;
+      let currentText = '';
+
+      const typeChar = () => {
+        if (lineIdx >= lines.length) return;
+        if (charIdx < lines[lineIdx].length) {
+          currentText += lines[lineIdx][charIdx];
+          typingEl.textContent = currentText;
+          charIdx++;
+          setTimeout(typeChar, 30 + Math.random() * 40);
+        } else {
+          currentText += '\n';
+          lineIdx++;
+          charIdx = 0;
+          if (lineIdx < lines.length) {
+            setTimeout(typeChar, 400);
+          }
+        }
+      };
+      setTimeout(typeChar, 1200);
+    }
+
+    // Contact form terminal echo
+    const contactForm = document.getElementById('contact-form') as HTMLFormElement | null;
+    const terminalOutput = document.getElementById('terminal-output');
+    if (contactForm && terminalOutput) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = (document.getElementById('contact-name') as HTMLInputElement)?.value || '';
+        const email = (document.getElementById('contact-email') as HTMLInputElement)?.value || '';
+        const project = (document.getElementById('contact-project') as HTMLSelectElement)?.value || '';
+        const message = (document.getElementById('contact-message') as HTMLTextAreaElement)?.value || '';
+
+        const echo = document.createElement('div');
+        echo.innerHTML = `
+          <div class="mt-4 text-cyber-teal">$ send_project --from="${name}"</div>
+          <div class="mt-1 text-cyber-text/80">
+            <div><span class="text-cyber-orange">FROM:</span> ${name} &lt;${email}&gt;</div>
+            <div><span class="text-cyber-orange">TYPE:</span> ${project}</div>
+            <div><span class="text-cyber-orange">MSG:</span> ${message.slice(0, 80)}${message.length > 80 ? '...' : ''}</div>
+            <div class="mt-1 text-cyber-teal">&#10003; Mensaje recibido. Responderemos en &lt;48h.</div>
+          </div>
+        `;
+        // Remove last line (cursor)
+        const lastLine = terminalOutput.querySelector(':scope > div:last-child');
+        if (lastLine) lastLine.remove();
+        terminalOutput.appendChild(echo);
+
+        const cursor = document.createElement('div');
+        cursor.className = 'mt-4 text-cyber-teal';
+        cursor.innerHTML = '$ <span class="typing-cursor text-cyber-orange">█</span>';
+        terminalOutput.appendChild(cursor);
+
+        contactForm.reset();
+
+        // Also open mailto as fallback
+        window.location.href = `mailto:hola@cibai.studio?subject=Proyecto: ${project}&body=Nombre: ${name}%0AEmail: ${email}%0A%0A${encodeURIComponent(message)}`;
+      });
+    }
   </script>
 </Layout>
