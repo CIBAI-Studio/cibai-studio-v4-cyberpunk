@@ -1,0 +1,482 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const services = [
+  {
+    num: '01',
+    label: 'DISEÑO_WEB',
+    title: 'Diseño Web Premium',
+    description: 'Interfaces visuales que convierten. Diseño UI/UX con identidad de marca, tipografía de alto contraste y animaciones con propósito. Nada genérico, todo a medida.',
+    tags: ['UI/UX', 'FIGMA', 'BRANDING'],
+  },
+  {
+    num: '02',
+    label: 'WEBAPPS_MEDIDA',
+    title: 'Webapps a Medida',
+    description: 'Aplicaciones web completas desde cero. React, Next.js, APIs, autenticación y dashboards. Soluciones por escalón con tu negocio y se adaptan a tus procesos.',
+    tags: ['NEXT.JS', 'REACT', 'TS', 'TRPC'],
+  },
+  {
+    num: '03',
+    label: 'COMERCIO_ELECTRÓNICO',
+    title: 'Comercio Electrónico',
+    description: 'Tiendas online de alto rendimiento. Integración con pasarelas de pago, gestión de inventario, panel de administración y optimización para conversión máxima.',
+    tags: ['SHOPIFY', 'STRIPE', 'NEXT.JS'],
+  },
+  {
+    num: '04',
+    label: 'SOLUCIONES_MEDIDA',
+    title: 'Soluciones a Medida',
+    description: 'Desde integraciones de terceros hasta sistemas complejos. Si tienes un problema técnico específico, lo resolvemos con el stack más adecuado para tu caso.',
+    tags: ['NODE.JS', 'POSTGRES', 'REST', 'DEPLOY'],
+  },
+];
+
+const processSteps = [
+  {
+    num: '01',
+    title: 'BRIEFING',
+    description: 'Entendemos tu visión, tus objetivos y los retos que quieres resolver. Sin briefing sólido no hay proyecto sólido.',
+  },
+  {
+    num: '02',
+    title: 'DISEÑO',
+    description: 'Cada pixel, cada interacción pensada desde la estrategia. Prototipamos antes de escribir una línea de código.',
+  },
+  {
+    num: '03',
+    title: 'DESARROLLO',
+    description: 'Código limpio, modular y documentado. Sprints ágiles con entregas regulares. Ves el progreso desde el día uno.',
+  },
+  {
+    num: '04',
+    title: 'REVISIÓN',
+    description: 'Iteramos contigo hasta que el resultado no solo cumpla tus expectativas, sino que las supere con creces.',
+  },
+  {
+    num: '05',
+    title: 'LANZAMIENTO',
+    description: 'Deploy controlado, verificaciones técnicas y puesta en marcha. El lanzamiento es el principio, no el final.',
+  },
+];
+
+const portfolioItems = [
+  {
+    title: 'VOLKANIK STUDIO',
+    category: 'Diseño Web + Branding',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop',
+  },
+  {
+    title: 'ANTREX SAAS',
+    category: 'Webapp + Automatización',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+  },
+  {
+    title: 'RAYA EDITORIAL',
+    category: 'E-commerce + SEO',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop',
+  },
+  {
+    title: 'NEROMA LABS',
+    category: 'Desarrollo Full-Stack',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop',
+  },
+];
+
+const values = [
+  {
+    num: '01',
+    title: 'BRUTALIDAD',
+    description: 'El diseño que no hace declaraciones no dice nada. Cada decisión visual es una posición.',
+  },
+  {
+    num: '02',
+    title: 'PRECISIÓN',
+    description: 'Un píxel fuera de lugar es un error. No entregamos hasta que el código y el diseño coincidan exactamente.',
+  },
+  {
+    num: '03',
+    title: 'VELOCIDAD',
+    description: 'Los plazos no son sugerencias. Trabajamos rápido sin comprometer ni un milímetro de calidad.',
+  },
+];
+
+const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NODE.JS', 'POSTGRES', 'SUPABASE', 'VERCEL', 'FIGMA', 'AI/ML', 'PYTHON', 'GRAPHQL', 'DOCKER'];
+---
+
+<Layout
+  title="CIBAI Studio — Hacemos la web brutal"
+  description="Agencia de diseño web, desarrollo de aplicaciones e inteligencia artificial para empresas en España. Diseño cyberpunk, código brutal, resultados reales."
+>
+  <!-- ═══════════════ NAV ═══════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-cyber-border bg-cyber-black/90 backdrop-blur-md">
+    <div class="mx-auto max-w-7xl px-6 flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-1">
+        <span class="text-lg font-bold tracking-tight text-cyber-white">CIBAI</span>
+        <span class="text-lg font-bold tracking-tight text-cyber-orange">.</span>
+        <span class="text-lg font-light tracking-tight text-cyber-orange">STUDIO</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#servicios" class="font-mono text-xs uppercase tracking-widest text-cyber-text hover:text-cyber-white transition-colors">Servicios</a>
+        <a href="#proceso" class="font-mono text-xs uppercase tracking-widest text-cyber-text hover:text-cyber-white transition-colors">Proceso</a>
+        <a href="#portfolio" class="font-mono text-xs uppercase tracking-widest text-cyber-text hover:text-cyber-white transition-colors">Portfolio</a>
+        <a href="#studio" class="font-mono text-xs uppercase tracking-widest text-cyber-text hover:text-cyber-white transition-colors">Studio</a>
+      </div>
+      <a href="#contacto" class="btn-primary text-xs py-2 px-5">PROYECTO</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,77,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,77,0,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <div class="absolute top-24 right-8 font-mono text-[10px] text-cyber-text/40 hidden lg:block text-right leading-relaxed">
+      <div>SYS_ON</div>
+      <div>PING: 8ms</div>
+      <div class="text-cyber-teal">STATUS: ONLINE</div>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-6 w-full">
+      <div class="max-w-4xl">
+        <div class="font-mono text-xs text-cyber-text mb-6 animate-fade-in-up">
+          <span class="text-cyber-orange">CIBAI_STUDIO</span>
+          <span class="mx-2 text-cyber-border">//</span>
+          <span>BERGA, BARCELONA, ESPAÑA</span>
+          <span class="mx-2 text-cyber-border">//</span>
+          <span class="text-cyber-teal">STATUS: ONLINE</span>
+        </div>
+
+        <h1 class="text-[clamp(3rem,8vw,7rem)] font-black leading-[0.9] tracking-tighter mb-8 animate-fade-in-up animate-delay-100">
+          HACEMOS<br/>
+          LA WEB<br/>
+          <span class="text-cyber-orange glow-orange">BRUTAL</span>
+        </h1>
+
+        <p class="text-lg text-cyber-text max-w-xl mb-10 leading-relaxed font-light animate-fade-in-up animate-delay-200">
+          Desarrollamos sitios web y webapps que impactan. Sin artificios. Sin genéricos. Sin compromiso.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-20 animate-fade-in-up animate-delay-300">
+          <a href="#contacto" class="btn-primary">
+            Solicitar Proyecto
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#portfolio" class="btn-secondary">Ver Proyectos</a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-8 max-w-md animate-fade-in-up animate-delay-400">
+          <div>
+            <div class="text-3xl font-black text-cyber-white">+50</div>
+            <div class="font-mono text-[10px] uppercase tracking-widest text-cyber-text mt-1">Proyectos</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black text-cyber-white">100<span class="text-cyber-orange">%</span></div>
+            <div class="font-mono text-[10px] uppercase tracking-widest text-cyber-text mt-1">Código funcional</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black text-cyber-white">&lt;48<span class="text-cyber-orange">h</span></div>
+            <div class="font-mono text-[10px] uppercase tracking-widest text-cyber-text mt-1">Respuesta</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+      <div class="w-px h-12 bg-gradient-to-b from-transparent to-cyber-orange/50"></div>
+      <span class="font-mono text-[9px] text-cyber-text uppercase tracking-widest">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TICKER ═══════════════ -->
+  <div class="border-y border-cyber-border py-4 overflow-hidden bg-cyber-dark/50">
+    <div class="ticker-track">
+      {[...tickerItems, ...tickerItems].map((item) => (
+        <span class="inline-flex items-center gap-4 px-6 font-mono text-sm text-cyber-text whitespace-nowrap">
+          <span class="w-1.5 h-1.5 bg-cyber-orange rounded-full flex-shrink-0"></span>
+          {item}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- ═══════════════ SERVICIOS ═══════════════ -->
+  <section id="servicios" class="py-32 relative">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-20">
+        <div class="section-number mb-4">// SERVICIOS</div>
+        <h2 class="text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[0.95] tracking-tight">
+          NUESTROS<br/>
+          <span class="text-cyber-teal glow-teal">SISTEMAS</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service) => (
+          <div class="card-brutal p-8 flex flex-col h-full">
+            <div class="flex items-baseline justify-between mb-6">
+              <span class="font-mono text-[10px] text-cyber-teal uppercase tracking-widest">{service.label}</span>
+              <span class="text-5xl font-black text-cyber-white/[0.07]">{service.num}</span>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-cyber-white">{service.title}</h3>
+            <p class="text-sm text-cyber-text leading-relaxed mb-6 flex-1">{service.description}</p>
+            <div class="flex flex-wrap gap-2 mt-auto">
+              {service.tags.map((tag: string) => (
+                <span class="font-mono text-[10px] px-2 py-1 border border-cyber-border text-cyber-text">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROCESO ═══════════════ -->
+  <section id="proceso" class="py-32 border-t border-cyber-border relative">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-20">
+        <div class="section-number mb-4">// PROCESO</div>
+        <h2 class="text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[0.95] tracking-tight mb-4">
+          PROCESO
+        </h2>
+        <p class="text-cyber-text max-w-lg font-light">
+          Cada proyecto pasa por 5 fases. Nada se deja al azar. Todo se ejecuta con precisión militar.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {processSteps.map((step) => (
+          <div class="card-brutal p-6 group">
+            <span class="text-4xl font-black text-cyber-orange/80 block mb-4">{step.num}</span>
+            <h3 class="font-mono text-sm font-bold tracking-wider mb-3 text-cyber-white">{step.title}</h3>
+            <p class="text-xs text-cyber-text leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="#contacto" class="btn-secondary text-xs">
+          Iniciar tu proyecto
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PORTFOLIO ═══════════════ -->
+  <section id="portfolio" class="py-32 border-t border-cyber-border relative">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-20">
+        <div class="section-number mb-4">// PORTFOLIO</div>
+        <h2 class="text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[0.95] tracking-tight mb-4">
+          PORTFOLIO
+        </h2>
+        <p class="text-cyber-text max-w-lg font-light">
+          Proyectos que hablan por nosotros. Cada uno es una historia de transformación.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {portfolioItems.map((item) => (
+          <div class="group relative aspect-[4/3] overflow-hidden border border-cyber-border cursor-pointer">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-30"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-black via-cyber-black/50 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 right-0 p-8 transition-all duration-500">
+              <span class="font-mono text-[10px] text-cyber-orange uppercase tracking-widest block mb-2">{item.category}</span>
+              <h3 class="text-2xl font-black tracking-tight text-cyber-white">{item.title}</h3>
+            </div>
+
+            <div class="absolute inset-4 border border-cyber-orange/0 group-hover:border-cyber-orange/30 transition-all duration-500 pointer-events-none"></div>
+
+            <div class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center border border-cyber-border opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:border-cyber-orange">
+              <svg class="w-4 h-4 text-cyber-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ STUDIO ═══════════════ -->
+  <section id="studio" class="py-32 border-t border-cyber-border relative">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mb-16">
+        <div class="section-number mb-4">05</div>
+        <div class="section-divider mb-8"></div>
+        <h2 class="text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[0.95] tracking-tight mb-4">
+          STUDIO
+        </h2>
+        <p class="text-cyber-text text-lg font-light uppercase tracking-wider">
+          Un equipo de dos que construye como diez.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+        <div>
+          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-6">// FILOSOFÍA</div>
+          <blockquote class="text-2xl md:text-3xl font-bold leading-snug mb-8 text-cyber-white">
+            &ldquo;Creemos que el código bien escrito y el diseño brutal no son opuestos. Son lo mismo.&rdquo;
+          </blockquote>
+          <p class="text-sm text-cyber-text leading-relaxed mb-4">
+            CIBAI nació de la convicción de que la mayoría de las webs son mediocres por elección, no por necesidad. Hacemos lo contrario: tomamos cada decisión con intención y entregamos solo lo que nos enorgullece.
+          </p>
+
+          <div class="grid grid-cols-3 gap-4 mt-10 pt-8 border-t border-cyber-border">
+            <div>
+              <span class="text-3xl font-black">47</span><span class="text-cyber-orange text-xl font-bold">Proyectos</span>
+              <div class="font-mono text-[9px] text-cyber-text uppercase tracking-widest mt-1">ENTREGADOS</div>
+            </div>
+            <div>
+              <span class="text-3xl font-black">100</span><span class="text-cyber-orange text-xl font-bold">%</span>
+              <div class="font-mono text-[9px] text-cyber-text uppercase tracking-widest mt-1">CÓDIGO FUNCIONAL</div>
+            </div>
+            <div>
+              <span class="text-3xl font-black">&lt; 48</span><span class="text-cyber-orange text-xl font-bold">h</span>
+              <div class="font-mono text-[9px] text-cyber-text uppercase tracking-widest mt-1">RESPUESTA INICIAL</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-6">// VALORES</div>
+          <div class="space-y-8">
+            {values.map((value) => (
+              <div class="flex gap-6 items-start">
+                <span class="text-5xl font-black text-cyber-orange/70 leading-none flex-shrink-0">{value.num}</span>
+                <div>
+                  <h3 class="text-xl font-black tracking-tight mb-2">{value.title}</h3>
+                  <p class="text-sm text-cyber-text leading-relaxed">{value.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACTO CTA ═══════════════ -->
+  <section id="contacto" class="py-32 border-t border-cyber-border relative">
+    <div class="mx-auto max-w-7xl px-6 text-center">
+      <div class="font-mono text-xs text-cyber-orange mb-6">// ¿TIENES UN PROYECTO?</div>
+      <h2 class="text-[clamp(2rem,4vw,3.5rem)] font-black leading-tight mb-6">
+        Hablemos de lo que necesitas.
+      </h2>
+      <p class="text-cyber-text max-w-lg mx-auto mb-10 font-light">
+        Primera consulta gratuita. Sin compromisos. Solo una conversación honesta sobre cómo podemos ayudarte a crecer.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="mailto:hola@cibai.studio" class="btn-primary">
+          Cuéntanos tu proyecto
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
+        <div>
+          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-2">EMAIL</div>
+          <a href="mailto:hola@cibai.studio" class="text-sm text-cyber-white hover:text-cyber-orange transition-colors">hola@cibai.studio</a>
+        </div>
+        <div>
+          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-2">UBICACIÓN</div>
+          <span class="text-sm text-cyber-white">Barcelona, España</span>
+        </div>
+        <div>
+          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-2">HORARIO</div>
+          <span class="text-sm text-cyber-white">Lun&ndash;Vie &middot; 9:00&ndash;18:00h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="border-t border-cyber-border">
+    <div class="mx-auto max-w-7xl px-6 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-1 mb-4">
+            <span class="text-lg font-bold text-cyber-white">CIBAI</span>
+            <span class="text-lg font-bold text-cyber-orange">.</span>
+            <span class="text-lg font-light text-cyber-orange">STUDIO</span>
+          </div>
+          <p class="text-sm text-cyber-text max-w-sm leading-relaxed mb-4">
+            Agencia especializada en desarrollo web, automatización e inteligencia artificial.
+          </p>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-cyber-teal/30 bg-cyber-teal/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyber-teal animate-pulse"></span>
+            <span class="font-mono text-[10px] text-cyber-teal uppercase tracking-widest">Disponibles para nuevos proyectos</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-4">NAVEGACIÓN</div>
+          <div class="space-y-3">
+            <a href="#" class="block text-sm text-cyber-text hover:text-cyber-white transition-colors">Inicio</a>
+            <a href="#servicios" class="block text-sm text-cyber-text hover:text-cyber-white transition-colors">Servicios</a>
+            <a href="#portfolio" class="block text-sm text-cyber-text hover:text-cyber-white transition-colors">Portfolio</a>
+            <a href="#studio" class="block text-sm text-cyber-text hover:text-cyber-white transition-colors">Studio</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-mono text-[10px] text-cyber-text uppercase tracking-widest mb-4">LEGAL</div>
+          <div class="space-y-3">
+            <a href="#" class="block text-sm text-cyber-text hover:text-cyber-white transition-colors">Política de privacidad</a>
+            <a href="#" class="block text-sm text-cyber-text hover:text-cyber-white transition-colors">Aviso legal</a>
+            <a href="#" class="block text-sm text-cyber-text hover:text-cyber-white transition-colors">Política de cookies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-cyber-border overflow-hidden">
+      <div class="mx-auto max-w-7xl px-6 py-8">
+        <div class="text-[clamp(3rem,12vw,10rem)] font-black leading-none tracking-tighter text-cyber-white/[0.04] select-none whitespace-nowrap">
+          CIBAI.STUDIO
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-cyber-border">
+      <div class="mx-auto max-w-7xl px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
+        <span class="font-mono text-[10px] text-cyber-text">&copy; 2026 CIBAI Studio. Todos los derechos reservados.</span>
+        <span class="font-mono text-[10px] text-cyber-text">Hecho con intensidad en Barcelona</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (href) {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card-brutal').forEach(el => {
+      (el as HTMLElement).style.opacity = '0';
+      observer.observe(el);
+    });
+  </script>
+</Layout>
