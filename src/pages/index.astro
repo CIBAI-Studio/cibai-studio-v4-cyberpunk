@@ -181,39 +181,79 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
     <div class="absolute inset-0 opacity-[0.03] hero-bg-grid" style="background-image: linear-gradient(rgba(255,77,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,77,0,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
     <div class="mx-auto max-w-7xl px-6 w-full">
-      <div class="max-w-4xl">
-        <div class="font-mono text-xs text-cyber-text mb-6 animate-fade-in-up">
-          <span class="text-cyber-orange">CIBAI_STUDIO</span>
-          <span class="mx-2 text-cyber-border">//</span>
-          <span>BERGA, BARCELONA, ESPAÑA</span>
-          <span class="mx-2 text-cyber-border">//</span>
-          <span class="text-cyber-teal">STATUS: ONLINE</span>
-        </div>
+      <div class="max-w-4xl relative" style="min-height: 420px;" id="hero-slider">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" id="hero-slide-0">
+          <div class="font-mono text-xs text-cyber-text mb-6 animate-fade-in-up">
+            <span class="text-cyber-orange">CIBAI_STUDIO</span>
+            <span class="mx-2 text-cyber-border">//</span>
+            <span>BERGA, BARCELONA, ESPAÑA</span>
+            <span class="mx-2 text-cyber-border">//</span>
+            <span class="text-cyber-teal">STATUS: ONLINE</span>
+          </div>
 
-        <h1 class="text-[clamp(3rem,8vw,7rem)] font-black leading-[0.9] tracking-tighter mb-8 animate-fade-in-up animate-delay-100 glitch-text" data-text="HACEMOS LA WEB BRUTAL">
-          HACEMOS<br/>
-          LA WEB<br/>
-          <span class="text-cyber-orange glow-orange">BRUTAL</span>
-        </h1>
+          <h1 class="text-[clamp(3rem,8vw,7rem)] font-black leading-[0.9] tracking-tighter mb-8 animate-fade-in-up animate-delay-100 glitch-text" data-text="HACEMOS LA WEB BRUTAL">
+            HACEMOS<br/>
+            LA WEB<br/>
+            <span class="text-cyber-orange glow-orange">BRUTAL</span>
+          </h1>
 
-        <div class="mb-10 animate-fade-in-up animate-delay-200">
-          <div class="font-mono text-sm text-cyber-text max-w-xl leading-relaxed bg-cyber-dark/80 border border-cyber-border p-4">
-            <span class="text-cyber-orange">$</span><span class="text-cyber-teal ml-1">cibai</span><span class="text-cyber-text ml-1">--init</span>
-            <div class="mt-2" id="typing-container">
-              <span id="typing-text" class="text-cyber-text/90"></span><span class="typing-cursor text-cyber-orange">█</span>
+          <div class="mb-10 animate-fade-in-up animate-delay-200">
+            <div class="font-mono text-sm text-cyber-text max-w-xl leading-relaxed bg-cyber-dark/80 border border-cyber-border p-4">
+              <span class="text-cyber-orange">$</span><span class="text-cyber-teal ml-1">cibai</span><span class="text-cyber-text ml-1">--init</span>
+              <div class="mt-2" id="typing-container">
+                <span id="typing-text" class="text-cyber-text/90"></span><span class="typing-cursor text-cyber-orange">█</span>
+              </div>
             </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4 mb-20 animate-fade-in-up animate-delay-300">
+            <a href="#contacto" class="btn-primary btn-glitch">
+              Solicitar Proyecto
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#portfolio" class="btn-secondary btn-glitch">Ver Proyectos</a>
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4 mb-20 animate-fade-in-up animate-delay-300">
-          <a href="#contacto" class="btn-primary btn-glitch">
-            Solicitar Proyecto
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="#portfolio" class="btn-secondary btn-glitch">Ver Proyectos</a>
+        <!-- Slide 2 -->
+        <div class="hero-slide" id="hero-slide-1">
+          <div class="font-mono text-xs text-cyber-text mb-6">
+            <span class="text-cyber-teal">PROTOCOL_V2</span>
+            <span class="mx-2 text-cyber-border">//</span>
+            <span>CÓDIGO + DISEÑO + IA</span>
+            <span class="mx-2 text-cyber-border">//</span>
+            <span class="text-cyber-orange">SIGNAL: ACTIVE</span>
+          </div>
+
+          <h2 class="text-[clamp(3rem,8vw,7rem)] font-black leading-[0.9] tracking-tighter mb-8 glitch-text" data-text="TU IDEA NUESTRO CÓDIGO">
+            TU IDEA<br/>
+            NUESTRO<br/>
+            <span class="text-cyber-teal glow-teal">CÓDIGO</span>
+          </h2>
+
+          <div class="mb-10">
+            <div class="font-mono text-sm text-cyber-text max-w-xl leading-relaxed bg-cyber-dark/80 border border-cyber-border p-4">
+              <span class="text-cyber-orange">$</span><span class="text-cyber-teal ml-1">deploy</span><span class="text-cyber-text ml-1">--mode=brutal</span>
+              <div class="mt-2 text-cyber-text/90">
+                > Webs, webapps y automatizaciones con IA.<br/>
+                > Del concepto al deploy en semanas, no meses.<br/>
+                > <span class="text-cyber-teal">Deploy completado.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4 mb-20">
+            <a href="#servicios" class="btn-primary btn-glitch">
+              Ver Servicios
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#contacto" class="btn-secondary btn-glitch">Contactar</a>
+          </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-8 max-w-md animate-fade-in-up animate-delay-400">
+        <!-- Stats + Slider Controls (shared, always visible) -->
+        <div class="grid grid-cols-3 gap-8 max-w-md animate-fade-in-up animate-delay-400 mb-8">
           <div>
             <div class="text-3xl font-black text-cyber-white">+50</div>
             <div class="font-mono text-[10px] uppercase tracking-widest text-cyber-text mt-1">Proyectos</div>
@@ -226,6 +266,18 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
             <div class="text-3xl font-black text-cyber-white">&lt;48<span class="text-cyber-orange">h</span></div>
             <div class="font-mono text-[10px] uppercase tracking-widest text-cyber-text mt-1">Respuesta</div>
           </div>
+        </div>
+
+        <!-- Slider dots -->
+        <div class="flex items-center gap-4 animate-fade-in-up animate-delay-500">
+          <div class="hero-slider-dots" id="hero-dots">
+            <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+          </div>
+          <div class="hero-slide-progress">
+            <div class="hero-slide-progress-bar" id="hero-progress"></div>
+          </div>
+          <span class="font-mono text-[9px] text-cyber-text/50" id="hero-slide-counter">01 / 02</span>
         </div>
       </div>
     </div>
@@ -654,6 +706,56 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
         }
       };
       setTimeout(typeChar, 1200);
+    }
+
+    // Hero Slider
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDots = document.querySelectorAll('.hero-dot');
+    const heroProgress = document.getElementById('hero-progress');
+    const heroCounter = document.getElementById('hero-slide-counter');
+    const SLIDE_DURATION = 6000;
+    let currentSlide = 0;
+    let slideTimer: ReturnType<typeof setTimeout> | null = null;
+
+    function setSlide(idx: number) {
+      heroSlides.forEach((s, i) => {
+        s.classList.toggle('active', i === idx);
+      });
+      heroDots.forEach((d, i) => {
+        d.classList.toggle('active', i === idx);
+      });
+      if (heroCounter) {
+        heroCounter.textContent = `0${idx + 1} / 0${heroSlides.length}`;
+      }
+      currentSlide = idx;
+      startProgress();
+    }
+
+    function startProgress() {
+      if (!heroProgress) return;
+      heroProgress.classList.remove('running');
+      heroProgress.style.transitionDuration = '0ms';
+      heroProgress.style.width = '0%';
+      void heroProgress.offsetWidth;
+      heroProgress.style.transitionDuration = `${SLIDE_DURATION}ms`;
+      heroProgress.classList.add('running');
+      heroProgress.style.width = '100%';
+
+      if (slideTimer) clearTimeout(slideTimer);
+      slideTimer = setTimeout(() => {
+        setSlide((currentSlide + 1) % heroSlides.length);
+      }, SLIDE_DURATION);
+    }
+
+    heroDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt((dot as HTMLElement).dataset.slide || '0', 10);
+        setSlide(idx);
+      });
+    });
+
+    if (heroSlides.length > 1) {
+      startProgress();
     }
 
     // Contact form terminal echo

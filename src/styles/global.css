@@ -240,6 +240,10 @@
   animation: glitchShift 4s ease-in-out infinite;
 }
 
+.glitch-text.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards, glitchShift 4s ease-in-out 0.8s infinite;
+}
+
 .glitch-text::before,
 .glitch-text::after {
   content: attr(data-text);
@@ -320,6 +324,64 @@
   30% { transform: translate(-1px, -2px); }
   40% { transform: translate(1px, 1px); }
   50% { transform: translateY(-1px); }
+}
+
+/* ═══ Hero Slider ═══ */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-slider-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--color-cyber-border);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.hero-dot.active {
+  background: var(--color-cyber-orange);
+  border-color: var(--color-cyber-orange);
+  box-shadow: 0 0 8px var(--color-cyber-orange);
+}
+
+.hero-dot:hover:not(.active) {
+  border-color: var(--color-cyber-orange);
+}
+
+.hero-slide-progress {
+  width: 60px;
+  height: 2px;
+  background: var(--color-cyber-border);
+  overflow: hidden;
+}
+
+.hero-slide-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--color-cyber-orange);
+  transition: width linear;
+}
+
+.hero-slide-progress-bar.running {
+  width: 100%;
 }
 
 /* ═══ Ticker Separator ═══ */
