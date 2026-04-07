@@ -1,43 +1,45 @@
-# Astro Starter Kit: Minimal
+# CIBAI Studio v4 — Cyberpunk Brutal
 
-```sh
-npm create astro@latest -- --template minimal
+Sitio web corporativo de CIBAI Studio con estética **Cyberpunk Brutal**: naranja + teal sobre negro, tipografía monospace, efectos de scan line, glow y animaciones HUD.
+
+## Stack
+
+- **Astro 6** — Static Site Generator
+- **Tailwind CSS v4** — Utility-first CSS via Vite plugin
+- **TypeScript** — Strict mode
+- **@astrojs/sitemap** — SEO sitemap generation
+
+## Estructura
+
+```
+src/
+  layouts/Layout.astro    — Layout base con head, OG tags, JSON-LD
+  pages/
+    index.astro           — Single-page principal (todas las secciones)
+    privacidad.astro      — Política de privacidad
+    aviso-legal.astro     — Aviso legal
+    cookies.astro         — Política de cookies
+  styles/global.css       — Theme cyberpunk, animaciones, componentes
+public/
+  favicon.svg             — Favicon SVG
+  robots.txt              — Directrices para crawlers
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Setup local
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm install
+npm run dev       # Dev server en localhost:4321
+npm run build     # Build estático en ./dist/
+npm run preview   # Preview local del build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deploy
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Build estático compatible con Vercel, Netlify o cualquier hosting de archivos estáticos.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Contacto
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Web: [cibai.studio](https://cibai.studio)
+- Email: hola@cibai.studio
+- Ubicación: Barcelona, España
