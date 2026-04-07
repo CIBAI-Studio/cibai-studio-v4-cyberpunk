@@ -183,7 +183,20 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
     <div class="absolute inset-0 opacity-[0.03] hero-bg-grid" style="background-image: linear-gradient(rgba(255,77,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,77,0,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
     <div class="mx-auto max-w-7xl px-6 w-full">
-      <div class="max-w-4xl relative" style="min-height: 420px;" id="hero-slider">
+      <div class="relative" style="min-height: 420px;" id="hero-slider">
+        <!-- Slider controls: top right -->
+        <div class="absolute top-0 right-0 flex items-center gap-4 z-10 animate-fade-in-up animate-delay-500">
+          <div class="hero-slider-dots" id="hero-dots">
+            <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+          </div>
+          <div class="hero-slide-progress">
+            <div class="hero-slide-progress-bar" id="hero-progress"></div>
+          </div>
+          <span class="font-mono text-[9px] text-cyber-text/50" id="hero-slide-counter">01 / 02</span>
+        </div>
+
+        <div class="max-w-4xl relative" style="min-height: 420px;">
         <!-- Slide 1 -->
         <div class="hero-slide active" id="hero-slide-0">
           <div class="font-mono text-xs text-cyber-text mb-6 animate-fade-in-up">
@@ -255,18 +268,8 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
         </div>
 
       </div>
-
-      <!-- Slider dots -->
-      <div class="flex items-center gap-4 mt-6 animate-fade-in-up animate-delay-500">
-        <div class="hero-slider-dots" id="hero-dots">
-          <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-          <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-        </div>
-        <div class="hero-slide-progress">
-          <div class="hero-slide-progress-bar" id="hero-progress"></div>
-        </div>
-        <span class="font-mono text-[9px] text-cyber-text/50" id="hero-slide-counter">01 / 02</span>
       </div>
+
     </div>
 
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
