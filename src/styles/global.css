@@ -234,39 +234,53 @@
   white-space: pre-wrap;
 }
 
-/* ═══ Scanner/Radar Text Effect ═══ */
-.scanner-text {
+/* ═══ Glitch Cyan/Magenta Text Effect ═══ */
+.glitch-text {
   position: relative;
-  overflow: hidden;
 }
 
-.scanner-text.animate-fade-in-up {
+.glitch-text.animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.scanner-text::after {
-  content: '';
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(0, 255, 200, 0.06) 45%,
-    rgba(0, 255, 200, 0.15) 50%,
-    rgba(0, 255, 200, 0.06) 55%,
-    transparent 100%
-  );
-  animation: scanLine 3s ease-in-out infinite;
-  will-change: transform;
+  overflow: hidden;
 }
 
-@keyframes scanLine {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(200%); }
+.glitch-text::before {
+  color: #00FFFF;
+  z-index: -1;
+  animation: glitchCyan 4s ease-in-out infinite alternate;
+}
+
+.glitch-text::after {
+  color: #FF00FF;
+  z-index: -1;
+  animation: glitchMagenta 4s ease-in-out infinite alternate;
+}
+
+@keyframes glitchCyan {
+  0%, 90%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); opacity: 0; }
+  92% { clip-path: inset(20% 0 40% 0); transform: translate(-3px, 1px); opacity: 0.7; }
+  94% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); opacity: 0.7; }
+  96% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 2px); opacity: 0.5; }
+  98% { clip-path: inset(50% 0 20% 0); transform: translate(3px, 0); opacity: 0.6; }
+}
+
+@keyframes glitchMagenta {
+  0%, 88%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); opacity: 0; }
+  90% { clip-path: inset(40% 0 20% 0); transform: translate(3px, -1px); opacity: 0.7; }
+  93% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, 1px); opacity: 0.7; }
+  95% { clip-path: inset(70% 0 5% 0); transform: translate(1px, -2px); opacity: 0.5; }
+  97% { clip-path: inset(30% 0 30% 0); transform: translate(-3px, 0); opacity: 0.6; }
 }
 
 /* ═══ Hero BG Glitch ═══ */
