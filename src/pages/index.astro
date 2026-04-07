@@ -667,13 +667,14 @@ const tickerItems = ['ASTRO', 'NEXT.JS', 'REACT', 'TAILWIND', 'TYPESCRIPT', 'NOD
         const project = (document.getElementById('contact-project') as HTMLSelectElement)?.value || '';
         const message = (document.getElementById('contact-message') as HTMLTextAreaElement)?.value || '';
 
+        const esc = (s: string) => { const d = document.createElement('span'); d.textContent = s; return d.innerHTML; };
         const echo = document.createElement('div');
         echo.innerHTML = `
-          <div class="mt-4 text-cyber-teal">$ send_project --from="${name}"</div>
+          <div class="mt-4 text-cyber-teal">$ send_project --from="${esc(name)}"</div>
           <div class="mt-1 text-cyber-text/80">
-            <div><span class="text-cyber-orange">FROM:</span> ${name} &lt;${email}&gt;</div>
-            <div><span class="text-cyber-orange">TYPE:</span> ${project}</div>
-            <div><span class="text-cyber-orange">MSG:</span> ${message.slice(0, 80)}${message.length > 80 ? '...' : ''}</div>
+            <div><span class="text-cyber-orange">FROM:</span> ${esc(name)} &lt;${esc(email)}&gt;</div>
+            <div><span class="text-cyber-orange">TYPE:</span> ${esc(project)}</div>
+            <div><span class="text-cyber-orange">MSG:</span> ${esc(message.slice(0, 80))}${message.length > 80 ? '...' : ''}</div>
             <div class="mt-1 text-cyber-teal">&#10003; Mensaje recibido. Responderemos en &lt;48h.</div>
           </div>
         `;
